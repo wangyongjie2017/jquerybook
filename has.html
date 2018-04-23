@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>has(expr|ele) | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 -68学习">
+<meta name="description" content="jQuery中文手册(在线版),68学习网,">
+<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/js.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.68xi.cn/jisuanjixuexi/manual/js/js/analytics.js','ga');
+
+  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
+  ga('send', 'pageview');
+</script>
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="has">
+    <h2><span>返回值:jQuery</span>has(expr|ele)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>保留包含特定后代的元素，去掉那些不含有指定后代的元素。</p>
+      <div class="longdesc">
+        <p>.has()方法将会从给定的jQuery对象中重新创建一组匹配的对象。提供的选择器会一一测试原先那些对象的后代，含有匹配后代的对象将得以保留。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>expr</strong><span>String</span><em>V1.4</em></h4>
+      <p>一个选择器字符串。</p>
+      <h4><strong>element</strong><span>DOMElement</span><em>V1.4</em></h4>
+      <p>一个DOM元素</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>给含有ul的li加上背景色</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;list item 1&lt;/li&gt;
+  &lt;li&gt;list item 2
+    &lt;ul&gt;
+      &lt;li&gt;list item 2-a&lt;/li&gt;
+      &lt;li&gt;list item 2-b&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;list item 3&lt;/li&gt;
+  &lt;li&gt;list item 4&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('li').has('ul').css('background-color', 'red');</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

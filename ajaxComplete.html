@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ajaxComplete(callback) | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 -68学习">
+<meta name="description" content="jQuery中文手册(在线版),68学习网,">
+<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/js.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.68xi.cn/jisuanjixuexi/manual/js/js/analytics.js','ga');
+
+  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
+  ga('send', 'pageview');
+</script>
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="ajaxComplete">
+    <h2><span>返回值:jQuery</span>ajaxComplete(callback)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>AJAX 请求完成时执行函数。Ajax 事件。</p>
+      <div class="longdesc">
+        <p>XMLHttpRequest 对象和设置作为参数传递给回调函数。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>callback</strong><span>Function</span><em>V1.0</em></h4>
+      <p>待执行函数</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>AJAX 请求完成时执行函数。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code> $("#msg").ajaxComplete(function(event,request, settings){
+   $(this).append("&lt;li&gt;请求完成.&lt;/li&gt;");
+ });</code></pre>
+      <h4>描述:</h4>
+      <p>当 AJAX 请求正在进行时显示“正在加载”的指示：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#txt").ajaxStart(function(){
+  $("#wait").css("display","block");
+});
+$("#txt").ajaxComplete(function(){
+  $("#wait").css("display","none");
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

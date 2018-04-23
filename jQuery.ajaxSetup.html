@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>jQuery.ajaxSetup([options]) | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 -68学习">
+<meta name="description" content="jQuery中文手册(在线版),68学习网,">
+<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/js.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.68xi.cn/jisuanjixuexi/manual/js/js/analytics.js','ga');
+
+  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
+  ga('send', 'pageview');
+</script>
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.ajaxSetup">
+    <h2><span>返回值:jQuery</span>jQuery.ajaxSetup(<em class="optional">[options]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>设置全局 AJAX 默认选项。</p>
+      <div class="longdesc">
+        <p>参数见 '$.ajax' 说明。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>options<em> </em></strong><span>Object</span><em>V1.1</em></h4>
+      <p>选项设置。所有设置项均为可选设置。.</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>设置 AJAX 请求默认地址为 "/xmlhttp/"，禁止触发全局 AJAX 事件，用 POST 代替默认 GET 方法。其后的 AJAX 请求不再设置任何选项参数。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.ajaxSetup({
+  url: "/xmlhttp/",
+  global: false,
+  type: "POST"
+});
+$.ajax({ data: myData });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

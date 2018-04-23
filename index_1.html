@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>index([selector|element]) | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 -68学习">
+<meta name="description" content="jQuery中文手册(在线版),68学习网,">
+<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/js.js"></script>
+<script type="text/javascript">
+(function(){var ua=navigator.userAgent.toLowerCase();var bIsIpad=ua.match(/ipad/i)=="ipad";var bIsIphoneOs=ua.match(/iphone os/i)=="iphone os";var bIsAndroid=ua.match(/android/i)=="android";var bIsWM=ua.match(/windows mobile/i)=="windows mobile";if(bIsIpad||bIsIphoneOs||bIsAndroid||bIsWM){window.location.href="https://www.68xi.cn/jisuanjixuexi/manual/js/m.html"}})();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.68xi.cn/jisuanjixuexi/manual/js/js/analytics.js','ga');
+
+  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
+  ga('send', 'pageview');
+</script>
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="index_1">
+    <h2><span>返回值:Number</span>index([selector|element])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>搜索匹配的元素，并返回相应元素的索引值，从0开始计数。</p>
+      <div class="longdesc">
+        <p>如果不给 .index() 方法传递参数，那么返回值就是这个jQuery对象集合中第一个元素相对于其同辈元素的位置。<br />
+          &nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果参数是一组DOM元素或者jQuery对象，那么返回值就是传递的元素相对于原先集合的位置。<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果参数是一个选择器，那么返回值就是原先元素相对于选择器匹配元素中的位置。如果找不到匹配的元素，则返回-1。
+          
+          具体请参考示例。 </p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>index()</strong><em>V1.4</em></h4>
+      <h4><strong>selector</strong><span>Selector</span><em>V14</em></h4>
+      <p>一个选择器，代表一个jQuery对象，将会从这个对象中查找元素。</p>
+      <h4><strong>element</strong><span>Element</span><em>V1.0</em></h4>
+      <p>获得 index 位置的元素。可以是 DOM 元素或 jQuery 选择器。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>查找元素的索引值</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;ul&gt;
+  &lt;li id="foo"&gt;foo&lt;/li&gt;
+  &lt;li id="bar"&gt;bar&lt;/li&gt;
+  &lt;li id="baz"&gt;baz&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('li').index(document.getElementById('bar')); //1，传递一个DOM对象，返回这个对象在原先集合中的索引位置
+$('li').index($('#bar')); //1，传递一个jQuery对象
+$('li').index($('li:gt(0)')); //1，传递一组jQuery对象，返回这个对象中第一个元素在原先集合中的索引位置
+$('#bar').index('li'); //1，传递一个选择器，返回#bar在所有li中的做引位置
+$('#bar').index(); //1，不传递参数，返回这个元素在同辈中的索引位置。  </code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

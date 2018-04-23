@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>click([[data],fn]) | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 -68学习">
+<meta name="description" content="jQuery中文手册(在线版),68学习网,">
+<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/js.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.68xi.cn/jisuanjixuexi/manual/js/js/analytics.js','ga');
+
+  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
+  ga('send', 'pageview');
+</script>
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="click">
+    <h2><span>返回值:jQuery</span>click([[data],fn])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>触发每一个匹配元素的click事件。</p>
+      <div class="longdesc">
+        <p>这个函数会调用执行绑定到click事件的所有函数。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>fn</strong><span>Function</span><em>V1.0</em></h4>
+      <p>在每一个匹配元素的click事件中绑定的处理函数。</p>
+      <h4><strong>[data],fn</strong><span>String,Function</span><em>V1.4.3</em></h4>
+      <p><strong>data</strong>:click([Data], fn) 可传入data供函数fn处理。</p>
+      <p><strong>fn</strong>:在每一个匹配元素的click事件中绑定的处理函数。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>触发页面内所有段落的点击事件</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").click();</code></pre>
+      <h4>描述:</h4>
+      <p>将页面内所有段落点击后隐藏。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").click( function () { $(this).hide(); });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>
