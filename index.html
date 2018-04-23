@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+<head>
+<meta charset="utf-8" />
+<title>jquery 在线手册 | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 -68学习"
+<meta name="description" content="jQuery中文手册(在线版),68学习网,">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/js/dtree.js"></script>
+<script type="text/javascript">
+(function(){var ua=navigator.userAgent.toLowerCase();var bIsIpad=ua.match(/ipad/i)=="ipad";var bIsIphoneOs=ua.match(/iphone os/i)=="iphone os";var bIsAndroid=ua.match(/android/i)=="android";var bIsWM=ua.match(/windows mobile/i)=="windows mobile";if(bIsIpad||bIsIphoneOs||bIsAndroid||bIsWM){window.location.href="https://www.68xi.cn/jisuanjixuexi/manual/js/m.html"}})();
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+		//$.getScript("js/jquery.autocomplete.js");
+	//$.getScript("js/dtree.js");
+	//$('#left').load('__left.html .dtree');
+	$('#right').load("cheatsheet.html #content");
+	$("#left,#right").on('click','li a', function(e) {				
+		var offset = $(this).offset();
+		$(this).css({"top":offset.top,"left":offset.left}).addClass("ayidong").animate({left:$(document).width()/2-390,top:90},300);
+		$("#gdt").append('<div id=conview><div class=background></div><iframe id='+'iframe_over'+' src='+$(this).attr('href')+'></iframe></div>');
+		$("#conview").delay(300).fadeIn("slow");
+		$("#gdt").addClass("gdtovh");
+		window.history.pushState(null, null, $(this).attr('href'));
+		e.preventDefault();
+		$("#iframe_over").css("top",$(document).scrollTop());
+		window.addEventListener('popstate', function(e) { 
+			$('#conview').remove();
+	　　　　$("#right").load(location.pathname); 
+	 　　});
+		return false;
+	});
+	
+/*	$(document).on("click",".close_button",function(){
+		//$("#conview").hide();
+		alert("68学习网");
+	});*/
+/*	function anchorClick(link) {
+　　　　var linkSplit = link.split('/').pop();
+alert(linkSplit);
+　　　　$.get(linkSplit, function(data) {
+　　　　　　//$("right").html(data);
+　　　　});
+　　}
+	window.addEventListener('popstate', function(e) {
+		anchorClick(location.pathname);
+		//$('#right').load(location.pathname+' #content');
+		//alert(location.pathname);
+		//$.getScript("js/js.js");
+	});*/
+})
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.68xi.cn/jisuanjixuexi/manual/js/js/analytics.js','ga');
+
+  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
+  ga('send', 'pageview');
+</script>
+</head>
+<body id="gdt">
+<!--[if IE]><div class="llq">换个浏览器吧，IE太落后了，用<a href="https://www.google.com/intl/zh-CN/chrome/browser/" target="_blank">谷歌</a>或<a href="http://firefox.com.cn/">火狐</a>浏览吧！</div><![endif]-->
+<div id='left'>
+<div class="dtree">
+<p style="text-align:center"><input type="text" name="query" id="query" placeholder="请输入关键字"/><!--<input type="button" id="butsoso" value="搜索" />--></p>
+<p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/index.html">速查表</a></p>
+  <div id="core">
+    <h2>核心</h2>
+    <ol>
+      <li><a href="jQuery_selector_context.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery_selector_context.html">jQuery([sel,[context]])</a></li>
+      <li><a href="jQuery_html_ownerDocument.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery_html_ownerDocument.html">jQuery(html,[ownerDoc])</a><sup>1.8*</sup></li>
+      <li><a href="jQuery_callback.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery_callback.html">jQuery(callback)</a></li>
+      <li><a href="jQuery.holdReady.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.holdReady.html">jQuery.holdReady(hold)</a><sup>1.6+</sup></li>
+      <li><a href="each.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/each.html">each(callback)</a></li>
+      <li><a href="size.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/size.html">size()</a></li>
+      <li><a href="length.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/length.html">length</a></li>
+      <li><a href="selector.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/selector.html">selector</a></li>
+      <li><a href="context.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/context.html">context</a></li>
+      <li><a href="get.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/get.html">get([index])</a></li>
+      <li><a href="index_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/index_1.html">index([selector|element])</a></li>
+      <li><a href="data.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/data.html">data([key],[value])</a></li>
+      <li><a href="removeData.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/removeData.html">removeData([name|list])</a><sup>1.7*</sup></li>
+      <li><a href="jQuery.data.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.data.html"><del>$.data(ele,[key],[val])</del></a><sup>1.8-</sup></li>
+      <li><a href="queue.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/queue.html" title="queue(element,[queueName])">queue(e,[q])</a></li>
+      <li><a href="dequeue.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/dequeue.html" title="dequeue([queueName])">dequeue([queueName])</a></li>
+      <li><a href="clearQueue.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/clearQueue.html" title="clearQueue([queueName])">clearQueue([queueName])</a></li>
+      <li><a href="jQuery.fn.extend.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.fn.extend.html">jQuery.fn.extend(object)</a></li>
+      <li><a href="jQuery.extend_object.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.extend_object.html">jQuery.extend(object)</a></li>
+      <li><a href="jQuery.noConflict.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.noConflict.html" title="jQuery.noConflict([extreme])">jQuery.noConflict([ex])</a></li>
+    </ol>
+  </div>
+  <div id="attributes">
+    <h2>属性</h2>
+    <ol>
+      <li><a href="attr.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/attr.html" title="attr(name|properties|key,value|fn)">attr(name|pro|key,val|fn)</a></li>
+      <li><a href="removeAttr.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/removeAttr.html">removeAttr(name)</a></li>
+      <li><a href="prop.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/prop.html" title="prop(name|properties|key,value|fn)">prop(n|p|k,v|f)</a><sup>1.6+</sup></li>
+      <li><a href="removeProp.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/removeProp.html">removeProp(name)</a><sup>1.6+</sup></li>
+      <li><a href="addClass.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/addClass.html">addClass(class|fn)</a></li>
+      <li><a href="removeClass.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/removeClass.html">removeClass([class|fn])</a></li>
+      <li><a href="toggleClass.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/toggleClass.html">toggleClass(class|fn[,sw])</a></li>
+      <li><a href="html.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/html.html">html([val|fn])</a></li>
+      <li><a href="text.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/text.html">text([val|fn])</a></li>
+      <li><a href="val.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/val.html">val([val|fn|arr])</a></li>
+    </ol>
+  </div>
+  <div id="css">
+    <h2>CSS</h2>
+    <ol>
+      <li><a href="css.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/css.html" title="css(name|properties|[,value|fn])">css(name|pro|[,val|fn])</a><sup>1.9*</sup></li>
+      <li><a href="jQuery.cssHooks.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.cssHooks.html">jQuery.cssHooks</a></li>      
+      <li><a href="offset.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/offset.html">offset([coordinates])</a></li>
+      <li><a href="position.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/position.html">position()</a></li>
+      <li><a href="scrollTop.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/scrollTop.html">scrollTop([val])</a></li>
+      <li><a href="scrollLeft.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/scrollLeft.html">scrollLeft([val])</a></li>
+      <li><a href="height.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/height.html">heigh([val|fn])</a></li>
+      <li><a href="width.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/width.html">width([val|fn])</a></li>
+      <li><a href="innerHeight.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/innerHeight.html">innerHeight()</a></li>
+      <li><a href="innerWidth.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/innerWidth.html">innerWidth()</a></li>
+      <li><a href="outerHeight.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/outerHeight.html">outerHeight([soptions])</a></li>
+      <li><a href="outerWidth.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/outerWidth.html">outerWidth([options])</a></li>
+    </ol>
+  </div>
+  <div id="selectors">
+    <h2>选择器</h2>
+    <ol>
+      <li><a href="id.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/id.html">#id</a></li>
+      <li><a href="element.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/element.html">element</a></li>
+      <li><a href="class.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/class.html">.class</a></li>
+      <li><a href="all.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/all.html">*</a></li>
+      <li><a href="multiple.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/multiple.html">selector1,selector2,selectorN</a></li>
+      <li><a href="descendant.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/descendant.html">ancestor descendant</a></li>
+      <li><a href="child.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/child.html">parent &gt;  child</a></li>
+      <li><a href="next_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/next_1.html">prev + next</a></li>
+      <li><a href="siblings_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/siblings_1.html">prev ~ siblings</a></li>
+      
+          <li><a href="first_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/first_1.html">:first</a></li>
+          <li><a href="not_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/not_1.html">:not(selector)</a></li>
+          <li><a href="even.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/even.html">:even</a></li>
+          <li><a href="odd.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/odd.html">:odd</a></li>
+          <li><a href="eq_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/eq_1.html">:eq(index)</a></li>
+          <li><a href="gt.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/gt.html">:gt(index)</a></li>
+          <li><a href="lang.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/lang.html">:lang</a><sup>1.9+</sup></li>
+          <li><a href="last_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/last_1.html">:last</a></li>
+          <li><a href="lt.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/lt.html">:lt(index)</a></li>
+          <li><a href="header.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/header.html">:header</a></li>
+          <li><a href="animated.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/animated.html">:animated</a></li>
+          <li><a href="focus_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/focus_1.html">:focus</a><sup>1.6+</sup></li>
+          <li><a href="root.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/root.html">:root</a><sup>1.9+</sup></li>
+          <li><a href="target.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/target.html">:target</a><sup>1.9+</sup></li>  
+      
+      <li><a href="contains.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/contains.html">:contains(text)</a></li>
+      <li><a href="empty_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/empty_1.html">:empty</a></li>
+      <li><a href="has_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/has_1.html">:has(selector)</a></li>
+      <li><a href="parent_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/parent_1.html">:parent</a></li>
+      <li><a href="hidden_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/hidden_1.html">:hidden</a></li>
+      <li><a href="visible.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/visible.html">:visible</a></li>
+      <li><a href="attributeHas.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/attributeHas.html">[attribute]</a></li>
+      <li><a href="attributeEquals.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/attributeEquals.html">[attribute=value]</a></li>
+      <li><a href="attributeNotEqual.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/attributeNotEqual.html">[attribute!=value]</a></li>
+      <li><a href="attributeStartsWith.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/attributeStartsWith.html">[attribute^=value]</a></li>
+      <li><a href="attributeEndsWith.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/attributeEndsWith.html">[attribute$=value]</a></li>
+      <li><a href="attributeContains.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/attributeContains.html">[attribute*=value]</a></li>
+      <li><a href="attributeMultiple.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/attributeMultiple.html">[attrSel1][attrSel2][attrSelN]</a></li>
+      
+          <li><a href="firstChild.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/firstChild.html">:first-child</a></li>
+          <li><a href="firstOfType.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/firstOfType.html">:first-of-type</a><sup>1.9+</sup></li>
+          <li><a href="lastChild.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/lastChild.html">:last-child</a></li>
+          <li><a href="lastOfType.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/lastOfType.html">:last-of-type</a><sup>1.9+</sup></li>
+          <li><a href="nthChild.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/nthChild.html">:nth-child</a></li>
+          <li><a href=":nthLastChild.html">:nth-last-child()</a><sup>1.9+</sup></li>
+          <li><a href="nthLastOfType.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/nthLastOfType.html">:nth-last-of-type()</a><sup>1.9+</sup></li>
+          <li><a href="nthOfType.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/nthOfType.html">:nth-of-type()</a><sup>1.9+</sup></li>
+          <li><a href="onlyChild.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/onlyChild.html">:only-child</a></li>
+          <li><a href="onlyOfType.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/onlyOfType.html">:only-of-type</a><sup>1.9+</sup></li>
+      
+      <li><a href="input.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/input.html">:input</a></li>
+      <li><a href="text_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/text_1.html">:text</a></li>
+      <li><a href="password.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/password.html">:password</a></li>
+      <li><a href="radio.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/radio.html">:radio</a></li>
+      <li><a href="checkbox.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/checkbox.html">:checkbox</a></li>
+      <li><a href="submit_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/submit_1.html">:submit</a></li>
+      <li><a href="image.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/image.html">:image</a></li>
+      <li><a href="reset.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/reset.html">:reset</a></li>
+      <li><a href="button.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/button.html">:button</a></li>
+      <li><a href="file.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/file.html">:file</a></li>
+      <li><a href="hidden_1.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/hidden_1.html">:hidden</a></li>
+      <li><a href="enabled.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/enabled.html">:enabled</a></li>
+      <li><a href="disabled.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/disabled.html">:disabled</a></li>
+      <li><a href="checked.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/checked.html">:checked</a></li>
+      <li><a href="selected.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/selected.html">:selected</a></li>
+    </ol>
+  </div>
+  <div id="manipulation">
+    <h2>文档处理</h2>
+    <ol>
+      <li><a href="append.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/append.html">append(content|fn)</a></li>
+      <li><a href="appendTo.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/appendTo.html">appendTo(content)</a></li>
+      <li><a href="prepend.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/prepend.html">prepend(content|fn)</a></li>
+      <li><a href="prependTo.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/prependTo.html">prependTo(content)</a></li>
+      <li><a href="after.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/after.html">after(content|fn)</a></li>
+      <li><a href="before.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/before.html">before(content|fn)</a></li>
+      <li><a href="insertAfter.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/insertAfter.html">insertAfter(content)</a></li>
+      <li><a href="insertBefore.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/insertBefore.html">insertBefore(content)</a></li>
+      <li><a href="wrap.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/wrap.html" title="wrap(html|element|fn)">wrap(html|ele|fn)</a></li>
+      <li><a href="unwrap.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/unwrap.html">unwrap()</a></li>
+      <li><a href="wrapAll.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/wrapAll.html" title="wrapall(html|element)">wrapall(html|ele)</a></li>
+      <li><a href="wrapInner.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/wrapInner.html" title="wrapInner(html|element|fn)">wrapInner(html|ele|fn)</a></li>
+      <li><a href="replaceWith.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/replaceWith.html">replaceWith(content|fn)</a></li>
+      <li><a href="replaceAll.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/replaceAll.html">replaceAll(selector)</a></li>
+      <li><a href="empty.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/empty.html">empty()</a></li>
+      <li><a href="remove.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/remove.html">remove([expr])</a></li>
+      <li><a href="detach.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/detach.html">detach([expr])</a></li>
+      <li><a href="clone.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/clone.html">clone([Even[,deepEven]])</a></li>
+    </ol>
+  </div>
+  <div id="traversing">
+    <h2>筛选</h2>
+    <ol>
+      <li><a href="eq.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/eq.html">eq(index|-index)</a></li>
+      <li><a href="first.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/first.html">first()</a></li>
+      <li><a href="last.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/last.html">last()</a></li>
+      <li><a href="hasClass.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/hasClass.html">hasClass(class)</a></li>
+      <li><a href="filter.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/filter.html" title="filter(expr|object|element|fn)">filter(expr|obj|ele|fn)</a></li>
+      <li><a href="is.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/is.html" title="is(expr|object|element|fn)">is(expr|obj|ele|fn)</a><sup>1.6*</sup></li>
+      <li><a href="map.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/map.html">map(callback)</a></li>
+      <li><a href="has.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/has.html" title="has(expr|element)">has(expr|ele)</a></li>
+      <li><a href="not.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/not.html" title="not(expr|element|fn)">not(expr|ele|fn)</a></li>
+      <li><a href="slice.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/slice.html" title="slice(start,[end])">slice(start,[end])</a></li>
+      <li><a href="children.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/children.html">children([expr])</a></li>
+      <li><a href="closest.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/closest.html" title="closest(expr,[context]|object|element)">closest(e|o|e)</a><sup>1.7*</sup></li>
+      <li><a href="find.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/find.html" title="find(expr|object|element)">find(e|o|e)</a><sup>1.6*</sup></li>
+      <li><a href="next.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/next.html">next([expr])</a></li>
+      <li><a href="nextAll.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/nextAll.html">nextall([expr])</a></li>
+      <li><a href="nextUntil.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/nextUntil.html" title="nextUntil([expr|element][,filter])">nextUntil([e|e][,f])</a><sup>1.6*</sup></li>
+      <li><a href="offsetParent.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/offsetParent.html">offsetParent()</a></li>
+      <li><a href="parent.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/parent.html">parent([expr])</a></li>
+      <li><a href="parents.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/parents.html">parents([expr])</a></li>
+      <li><a href="parentsUntil.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/parentsUntil.html" title="parentsUntil([expr|element][,filter])">parentsUntil([e|e][,f])</a><sup>1.6*</sup></li>
+      <li><a href="prev.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/prev.html">prev([expr])</a></li>
+      <li><a href="prevAll.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/prevAll.html">prevall([expr])</a></li>
+      <li><a href="prevUntil.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/prevUntil.html" title="prevUntil([expr|element][,filter])">prevUntil([e|e][,f])</a><sup>1.6*</sup></li>
+      <li><a href="siblings.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/siblings.html">siblings([expr])</a></li>
+      <li><a href="add.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/add.html" title="add(expr|element|html|object[,context])">add(e|e|h|o[,c])</a></li>
+      <li><a href="andSelf.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/andSelf.html">andSelf()</a></li>
+      <li><a href="contents.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/contents.html">contents()</a></li>
+      <li><a href="end.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/end.html">end()</a></li>
+    </ol>
+  </div>
+  <div id="events">
+    <h2>事件</h2>
+    <ol>
+      <li><a href="ready.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/ready.html">ready(fn)</a></li>
+      <li><a href="on.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/on.html" title="on(events,[selector],[data],fn)">on(eve,[sel],[data],fn)</a><sup>1.7+</sup></li>
+      <li><a href="off.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/off.html" title="off(events,[selector],[data],fn)">off(eve,[sel],[fn])</a><sup>1.7+</sup></li>
+      <li><a href="bind.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/bind.html">bind(type,[data],fn)</a></li>
+      <li><a href="one.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/one.html">one(type,[data],fn)</a></li>
+      <li><a href="trigger.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/trigger.html">trigger(type,[data])</a></li>
+      <li><a href="triggerHandler.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/triggerHandler.html">triggerHandler(type, [data])</a></li>
+      <li><a href="unbind.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/unbind.html" title="unbind(type,[data|fn])">unbind(t,[d|f])</a></li>
+      <li><del><a href="live.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/live.html">live(type,[data],fn)</a></del><sup>1.7-</sup></li>
+      <li><del><a href="die.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/die.html">die(type,[fn])</a></del><sup>1.7-</sup></li>
+      <li><a href="delegate.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/delegate.html" title="delegate(selector,[type],[data],fn)">delegate(s,[t],[d],fn)</a></li>
+      <li><a href="undelegate.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/undelegate.html" title="undelegate([selector,[type],fn])">undelegate([s,[t],fn])</a><sup>1.6*</sup></li>
+      <li><a href="hover.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/hover.html">hover([over,]out)</a></li>
+      <li><a href="toggle.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/toggle.html">toggle(fn, fn2, [fn3, fn4, ...])</a></li>
+      <li><a href="blur.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/blur.html">blur([[data],fn])</a></li>
+      <li><a href="change.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/change.html">change([[data],fn])</a></li>
+      <li><a href="click.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/click.html">click([[data],fn])</a></li>
+      <li><a href="dblclick.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/dblclick.html">dblclick([[data],fn])</a></li>
+      <li><a href="error.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/error.html">error([[data],fn])</a></li>
+      <li><a href="focus.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/focus.html">focus([[data],fn])</a></li>
+      <li><a href="focusin.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/focusin.html">focusin([data],fn)</a></li>
+      <li><a href="focusout.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/focusout.html">focusout([data],fn)</a></li>
+      <li><a href="keydown.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/keydown.html">keydown([[data],fn])</a></li>
+      <li><a href="keypress.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/keypress.html">keypress([[data],fn])</a></li>
+      <li><a href="keyup.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/keyup.html">keyup([[data],fn])</a></li>
+      <li><a href="mousedown.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/mousedown.html">mousedown([[data],fn])</a></li>
+      <li><a href="mouseenter.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/mouseenter.html">mouseenter([[data],fn])</a></li>
+      <li><a href="mouseleave.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/mouseleave.html">mouseleave([[data],fn])</a></li>
+      <li><a href="mousemove.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/mousemove.html">mousemove([[data],fn])</a></li>
+      <li><a href="mouseout.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/mouseout.html">mouseout([[data],fn])</a></li>
+      <li><a href="mouseover.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/mouseover.html">mouseover([[data],fn])</a></li>
+      <li><a href="mouseup.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/mouseup.html">mouseup([[data],fn])</a></li>
+      <li><a href="resize.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/resize.html">resize([[data],fn])</a></li>
+      <li><a href="scroll.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/scroll.html">scroll([[data],fn])</a></li>
+      <li><a href="select.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/select.html">select([[data],fn])</a></li>
+      <li><a href="submit.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/submit.html">submit([[data],fn])</a></li>
+      <li><a href="unload.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/unload.html">unload([[data],fn])</a></li>
+    </ol>
+  </div>
+  <div id="effects">
+    <h2>效果</h2>
+    <ol>
+      <li><a href="show.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/show.html" title="show([speed,[easing],[fn]])">show([s,[e],[fn]])</a></li>
+      <li><a href="hide.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/hide.html" title="hide([speed,[easing],[fn]])">hide([s,[e],[fn]])</a></li>
+      <li><a href="toggle.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/toggle.html" title="toggle([speed],[easing],[fn])">toggle([s],[e],[fn])</a></li>
+      <li><a href="slideDown.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/slideDown.html" title="slideDown([speed],[easing],[fn])">slideDown([s],[e],[fn])</a></li>
+      <li><a href="slideUp.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/slideUp.html" title="slideUp([speed,[easing],[fn]])">slideUp([s,[e],[fn]])</a></li>
+      <li><a href="slideToggle.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/slideToggle.html" title="slideToggle([speed],[easing],[fn])">slideToggle([s],[e],[fn])</a></li>
+      <li><a href="fadeIn.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/fadeIn.html" title="fadeIn([speed],[easing],[fn])">fadeIn([s],[e],[fn])</a></li>
+      <li><a href="fadeOut.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/fadeOut.html" title="fadeOut([speed],[easing],[fn])">fadeOut([s],[e],[fn])</a></li>
+      <li><a href="fadeTo.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/fadeTo.html" title="fadeTo([[speed],opacity,[easing],[fn]])">fadeTo([[s],o,[e],[fn]])</a></li>
+      <li><a href="fadeToggle.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/fadeToggle.html" title="fadeToggle([speed,[easing],[fn]])">fadeToggle([s,[e],[fn]])</a></li>
+      <li><a href="animate.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/animate.html" title="animate(params,[speed],[easing],[fn])">animate(p,[s],[e],[fn])</a><sup>1.8*</sup></li>
+      <li><a href="stop.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/stop.html" title="stop([clearQueue],[jumpToEnd])">stop([c],[j])</a><sup>1.7*</sup></li>
+      <li><a href="delay.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/delay.html" title="delay(duration,[queueName])">delay(d,[q])</a></li>
+      <li><a href="finish.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/finish.html" title="finish([queue])">finish([queue])</a><sup>1.9+</sup></li>
+      <li><a href="jQuery.fx.off.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.fx.off.html">jQuery.fx.off</a></li>
+      <li><a href="jQuery.fx.interval.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.fx.interval.html">jQuery.fx.interval</a></li>
+    </ol>
+  </div>
+  <div id="ajax">
+    <h2>ajax</h2>
+    <ol>
+      <li><a href="jQuery.ajax.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.ajax.html">$.ajax(url,[settings])</a></li>
+      <li><a href="load.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/load.html">load(url,[data],[callback])</a></li>
+      <li><a href="jQuery.get.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.get.html">$.get(url,[data],[fn],[type])</a></li>
+      <li><a href="jQuery.getJSON.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.getJSON.html">$.getJSON(url,[data],[fn])</a></li>
+      <li><a href="jQuery.getScript.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.getScript.html">$.getScript(url,[callback])</a></li>
+      <li><a href="jQuery.post.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.post.html">$.post(url,[data],[fn],[type])</a></li>
+      <li><a href="ajaxComplete.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/ajaxComplete.html">ajaxComplete(callback)</a></li>
+      <li><a href="ajaxError.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/ajaxError.html">ajaxError(callback)</a></li>
+      <li><a href="ajaxSend.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/ajaxSend.html">ajaxSend(callback)</a></li>
+      <li><a href="ajaxStart.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/ajaxStart.html">ajaxStart(callback)</a></li>
+      <li><a href="ajaxStop.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/ajaxStop.html">ajaxStop(callback)</a></li>
+      <li><a href="ajaxSuccess.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/ajaxSuccess.html">ajaxSuccess(callback)</a></li>
+      <li><a href="jQuery.ajaxPrefilter.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.ajaxPrefilter.html">$.ajaxPrefilter([type],fn)</a></li>
+      <li><a href="jQuery.ajaxSetup.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.ajaxSetup.html">$.ajaxSetup([options])</a></li>
+      <li><a href="serialize.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/serialize.html">serialize()</a></li>
+      <li><a href="serializearray.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/serializearray.html">serializearray()</a></li>
+    </ol>
+  </div>
+  <div id="utilities">
+    <h2>工具</h2>
+    <ol>
+      <li><a href="jQuery.support.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.support.html">$.support</a></li>
+      <li><a href="jQuery.browser.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.browser.html"><del>$.browser</del></a><sup>1.9-</sup></li>
+      <li><a href="jQuery.browser.version.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.browser.version.html">$.browser.version</a></li>
+      <li><del><a href="jQuery.boxModel.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.boxModel.html">$.boxModel</a></del></li>
+      <li><a href="jQuery.each.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.each.html">$.each(object,[callback])</a></li>
+      <li><a href="jQuery.extend.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.extend.html">$.extend([d],tgt,obj1,[objN])</a></li>
+      <li><a href="jQuery.grep.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.grep.html">$.grep(array,fn,[invert])</a></li>
+      <li><a href="jQuery.sub.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.sub.html"><del>$.sub()</del></a><sup>1.9-</sup></li>
+      <li><a href="jQuery.when.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.when.html">$.when(deferreds)</a></li>
+      <li><a href="jQuery.makeArray.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.makeArray.html">$.makearray(obj)</a></li>
+      <li><a href="jQuery.map.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.map.html">$.map(arr|obj,callback)</a><sup>1.6*</sup></li>
+      <li><a href="jQuery.inArray.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.inArray.html">$.inarray(val,arr,[from])</a></li>
+      <li><a href="jQuery.toarray.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.toarray.html">$.toarray()</a></li>
+      <li><a href="jQuery.merge.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.merge.html">$.merge(first,second)</a></li>
+      <li><a href="jQuery.unique.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.unique.html">$.unique(array)</a></li>
+      <li><a href="jQuery.parseJSON.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.parseJSON.html">$.parseJSON(json)</a></li>
+      <li><a href="jQuery.parseXML.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.parseXML.html">$.parseXML(data)</a></li>
+      <li><a href="jQuery.noop.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.noop.html">$.noop</a>
+      </li><li><a href="jQuery.proxy.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.proxy.html">$.proxy(function,context)</a></li>
+      <li><a href="jQuery.contains.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.contains.html" title="$.contains(container,contained)">$.contains(c,c)</a></li>
+      <li><a href="jQuery.type.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.type.html">$.type(obj)</a></li>
+      <li><a href="jQuery.isArray.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.isArray.html">$.isarray(obj)</a></li>
+      <li><a href="jQuery.isFunction.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.isFunction.html">$.isFunction(obj)</a></li>
+      <li><a href="jQuery.isEmptyObject.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.isEmptyObject.html">$.isEmptyObject(obj)</a></li>
+      <li><a href="jQuery.isPlainObject.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.isPlainObject.html">$.isPlainObject(obj)</a></li>
+      <li><a href="jQuery.isWindow.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.isWindow.html">$.isWindow(obj)</a></li>
+      <li><a href="jQuery.isNumeric.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.isNumeric.html">$.isNumeric(value)</a><sup>1.7+</sup></li>
+      <li><a href="jQuery.trim.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.trim.html">$.trim(str)</a></li>
+      <li><a href="jQuery.param.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.param.html">$.param(obj,[traditional])</a></li>
+      <li><a href="jQuery.error.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.error.html">$.error(message)</a></li>
+      <li><a href="jquery.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jquery.html">$.fn.jquery</a></li>
+    </ol>
+  </div>
+  <div id="Eventobject">
+    <h2>事件对象</h2>
+    <ol>
+      <li><a href="event.currentTarget.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.currentTarget.html">eve.currentTarget</a></li>
+      <li><a href="event.data.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.data.html">eve.data</a></li>
+      <li><a href="event.delegateTarget.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.delegateTarget.html">eve.delegateTarget</a><sup>1.7+</sup></li>
+      <li><a href="event.isDefaultPrevented.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.isDefaultPrevented.html">eve.isDefaultPrevented()</a></li>
+      <li><a href="event.isImmediatePropagationStopped.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.isImmediatePropagationStopped.html" title="event.isImmediatePropagationStopped">eve.isImmediatePropag...()</a></li>
+      <li><a href="event.isPropagationStopped.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.isPropagationStopped.html">eve.isPropagationStopped()</a></li>
+      <li><a href="event.namespace.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.namespace.html">eve.namespace</a></li>
+      <li><a href="event.pageX.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.pageX.html">eve.pageX</a></li>
+      <li><a href="event.pageY.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.pageY.html">eve.pageY</a></li>
+      <li><a href="event.preventDefault.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.preventDefault.html">eve.preventDefault()</a></li>
+      <li><a href="event.relatedTarget.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.relatedTarget.html">eve.relatedTarget</a></li>
+      <li><a href="event.result.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.result.html">eve.result</a></li>
+      <li><a href="event.stopImmediatePropagation.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.stopImmediatePropagation.html" title="event.stopImmediatePropagation">eve.stopImmediatePro...()</a></li>
+      <li><a href="event.stopPropagation.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.stopPropagation.html">eve.stopPropagation()</a></li>
+      <li><a href="event.target.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.target.html">eve.target</a></li>
+      <li><a href="event.timeStamp.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.timeStamp.html">eve.timeStamp</a></li>
+      <li><a href="event.type.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.type.html">eve.type</a></li>
+      <li><a href="event.which.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/event.which.html">eve.which</a></li>
+    </ol>
+  </div>
+  <div id="Deferred">
+    <h2>延迟对象</h2>
+    <ol>
+      <li><a href="deferred.done.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.done.html" title="deferred.done(doneCallbacks[,doneCallbacks])">def.done(d,[d])</a></li>
+      <li><a href="deferred.fail.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.fail.html">def.fail(failCallbacks)</a></li>
+      <li><a href="deferred.isRejected.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.isRejected.html"><del>def.isRejected()</del></a><sup>1.7-</sup></li>
+      <li><a href="deferred.isResolved.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.isResolved.html"><del>def.isResolved()</del></a><sup>1.7-</sup></li>
+      <li><a href="deferred.reject.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.reject.html">def.reject(args)</a></li>
+      <li><a href="deferred.rejectWith.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.rejectWith.html" title="deferred.rejectWith(context,[args])">def.rejectWith(c,[a])</a></li>
+      <li><a href="deferred.resolve.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.resolve.html">def.resolve(args)</a></li>
+      <li><a href="deferred.resolveWith.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.resolveWith.html" title="deferred.resolveWith(context,[args])">def.resolveWith(c,[a])</a></li>
+      <li><a href="deferred.then.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.then.html" title="deferred.then(doneCallbacks,failCallbacks[, progressCallbacks])">def.then(d[,f][,p])</a><sup>1.8*</sup></li>
+      <li><a href="deferred.promise.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.promise.html" title="deferred.promise([type],[target])">def.promise([ty],[ta])</a><sup>1.6+</sup></li>
+      <li><del><a href="deferred.pipe.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.pipe.html" title="deferred.pipe([doneFilter],[failFilter],[progressFilter])">def.pipe([d],[f],[p])</a></del><sup>1.8-</sup></li>
+      <li><a href="deferred.always.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.always.html" title="deferred.always(alwaysCallbacks,[alwaysCallbacks])">def.always(al,[al])</a><sup>1.6+</sup></li>
+      <li><a href="deferred.notify.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.notify.html">def.notify(args)</a><sup>1.7+</sup></li>
+      <li><a href="deferred.notifyWith.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.notifyWith.html" title="deferred.notifyWith(context,[args])">def.notifyWith(c,[a])</a><sup>1.7+</sup></li>
+      <li><a href="deferred.progress.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.progress.html" title="deferred.progress(progressCallbacks)">def.progress(proCal)</a><sup>1.7+</sup></li>
+      <li><a href="deferred.state.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/deferred.state.html">def.state()</a><sup>1.7+</sup></li>
+    </ol>
+  </div>
+  <div id="Callbacks">
+    <h2>回调函数</h2>
+    <ol>
+      <li><a href="callbacks.add.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.add.html">cal.add(callbacks)</a><sup>1.7+</sup></li>
+      <li><a href="callbacks.disable.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.disable.html">cal.disable()</a><sup>1.7+</sup></li>
+      <li><a href="callbacks.empty.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.empty.html">cal.empty()</a><sup>1.7+</sup></li>
+      <li><a href="callbacks.fire.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.fire.html">cal.fire(arguments)</a><sup>1.7+</sup></li>
+      <li><a href="callbacks.fired.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.fired.html">cal.fired()</a><sup>1.7+</sup></li>
+      <li><a href="callbacks.fireWith.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.fireWith.html" title="callbacks.fireWith([context] [, args])">cal.fireWith([c] [,a])</a><sup>1.7+</sup></li>
+      <li><a href="callbacks.has.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.has.html">cal.has(callback)</a><sup>1.7+</sup></li>
+      <li><a href="callbacks.lock.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.lock.html">cal.lock()</a><sup>1.7+</sup></li>
+      <li><a href="callbacks.locked.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.locked.html">cal.locked()</a><sup>1.7+</sup></li>
+      <li><a href="callbacks.remove.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/callbacks.remove.html">cal.remove(callbacks)</a><sup>1.7+</sup></li>
+      <li><a href="jQuery.callbacks.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/jQuery.callbacks.html">$.callbacks(flags)</a><sup>1.7+</sup></li>
+    </ol>
+  </div>
+  <div id="Other">
+    <h2>其它</h2>
+	  <ol>        
+      	 <li><a href="cssFormat.html">CSS压缩/格式化</a></li>
+         <li><a href="jsFormat.html">JS压缩/格式化</a></li>
+         <li><a href="regexChe.html">正则表达式在线测试</a></li>
+	     <li><a href="regexp.html" tppabs="https://www.68xi.cn/jisuanjixuexi/manual/js/regexp.html">正则表达式</a></li>
+         <li><a href="html5.html">HTML5速查表</a></li>
+	  </ol>
+  </div>
+</div>
+</div>
+<div id='right'></div>
+</body>
+</html>
